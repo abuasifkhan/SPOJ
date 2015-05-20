@@ -73,7 +73,7 @@ void longestPal(){
     Max=0;
 //    cout<<str<<endl;
     for(int i=1;i<2*len;i++){
-        int i_mirror = P[2*C-i];    // Mirror Index WRT C.
+        int i_mirror = 2*C-i;    // Mirror Index WRT C.
         P[i]=(R>i)?min(R-i, P[i_mirror]):0;  // If it exceeds R then zero. Else...
         while(i+1+P[i]<=2*len and i-1-P[i]>=0 and str[i+1+P[i]] == str[i-1-P[i]])
             P[i]++;
