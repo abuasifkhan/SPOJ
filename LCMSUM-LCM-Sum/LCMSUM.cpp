@@ -74,16 +74,14 @@ void eulerPhi(int sz){
 void preproc(){
     int sz=1000000;
     eulerPhi(sz);
-    for(int i=1;i<=sz;i++)
-        s[i]=1;
-
+    s[1]=1;
     for(int i=2;i<=sz;i++){
         for(int j=i;j<=sz;j+=i){
-            s[j] += phi[i]*i;
+            s[j] += (ll)phi[i]*(ll)i;
         }
     }
     for(int i=1;i<=sz;i++){
-        s[i] = (s[i]-1)/2 * i;
+        s[i] = s[i]/2 * i;
     }
 }
 
