@@ -66,23 +66,23 @@ int main()
 	CLEAR(tree, 0);
 	S(n);
 	map<int, int>mp;
-    vector<dQuery>stk;
+    	vector<dQuery>stk;
 	for(int i=1; i<=n; i++){
-	    int a;S(a);
-        dQuery t;
-        t.st=t.en=i; t.val=a, t.typ=0;
-        stk.pb(t);
+	   	int a;S(a);
+		dQuery t;
+		t.st=t.en=i; t.val=a, t.typ=0;
+		stk.pb(t);
 	}
 	int q;
 	S(q);
-    for(int i=1; i<=q; i++){
-        int u,v,val; S(u); S(v);
-        dQuery t;
-        t.st=u, t.en=v, t.val=i, t.typ=1;
-        stk.pb(t);
-    }
-    sort(stk.begin(), stk.end(), comp);
-    for(int i=0; i<stk.size(); i++){
+	for(int i=1; i<=q; i++){
+		int u,v,val; S(u); S(v);
+		dQuery t;
+		t.st=u, t.en=v, t.val=i, t.typ=1;
+		stk.pb(t);
+    	}
+    	sort(stk.begin(), stk.end(), comp);
+    	for(int i=0; i<stk.size(); i++){
         dQuery tmp = stk[i];
         if(tmp.typ==0){
             if(mp[tmp.val]){
